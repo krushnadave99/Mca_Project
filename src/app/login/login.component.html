@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="card">
+    <h1 class="card-title">Sign In</h1>
+    <small class="card-subtitle">Enter your credentials and get access</small>
+    <div class="card-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <div class="card-input-container username">
+          <input type="text" placeholder="Enter your username">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="card-input-container password">
+          <input type="password" placeholder="Enter your password" >
+        </div>
+      </div>
+      <button class="card-button" [routerLink]="['/home']">Sign In</button>
+      <small class="card-forgot-password">Forgot your passwrod ? <a>Reset Password</a></small>
+    </div>
+  </div>
+</div>
