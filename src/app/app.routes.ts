@@ -6,7 +6,7 @@ import { AboutComponent } from './master-layout/about/about.component';
 import { BlogComponent } from './master-layout/blog/blog.component';
 import { CategoriesComponent } from './master-layout/categories/categories.component';
 import { ContactusComponent } from './master-layout/contactus/contactus.component';
-import { AddtocartComponent } from './master-layout/addtocart/addtocart.component';
+
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { AddFavoriteComponent } from './add-favorite/add-favorite.component';
 import { HomeComponent } from './master-layout/home/home.component';
