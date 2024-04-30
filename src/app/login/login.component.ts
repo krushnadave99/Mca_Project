@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -6,7 +7,8 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class LoginComponent {
 

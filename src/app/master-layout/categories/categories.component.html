@@ -1,14 +1,74 @@
-
 <section class="">
-      <div class="mt-2">
-        <h3>
-          Books Categories
-        </h3><hr>
-      </div>
+  <div class="mt-2">
+    <h3>
+      Books List
+    </h3>
+    <hr>
+  </div>
 </section>
-<div class="row m-0">
-  <div class="col-sm-6 col-md-4 p-0">
-      <div class="box">
+<div class="container">
+  <div class="row m-0">
+    <ng-container *ngFor="let item of bookList">
+      <div class="col-md-2 mx-2 p-0">
+        <div class="box">
+          <a>
+            <img [src]="item.Img" alt="Booklist">
+          </a>
+          <div>
+            {{item.title}}
+          </div>
+          <div>
+            {{item.dec}}
+          </div>
+          <div>
+            {{item.price}}
+          </div>
+        </div>
       </div>
+    </ng-container>
+  </div>
+  <hr>
+  <h2>Cat 1</h2>
+  <div class="row m-0">
+    <ng-container *ngFor="let item of bookCat">
+      <div class="col-md-2 mx-2 p-0">
+        <div class="box">
+          <a>
+            <img [src]="item.Img" alt="Booklist">
+          </a>
+          <div>
+            {{item.title}}
+          </div>
+          <div>
+            {{item.dec}}
+          </div>
+          <div>
+            {{item.price}}
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <hr>
+  <h2>Cat 2</h2>
+  <div class="row m-0">
+    <ng-container *ngFor="let item of bookCat">
+      <div class="col-md-2 mx-2 p-0">
+        <div class="box">
+          <a>
+            <img [src]="item.Img" alt="Booklist">
+          </a>
+          <div>
+            {{item.title}}
+          </div>
+          <div>
+            {{item.dec}}
+          </div>
+          <div>
+            {{item.price}}
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
