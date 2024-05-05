@@ -4,7 +4,6 @@ import { provideRouter } from "@angular/router";
 import { routes } from "./app.routes";
 import { provideClientHydration } from "@angular/platform-browser";
 import { GoogleLoginProvider, SocialAuthServiceConfig } from "@abacritt/angularx-social-login";
-import { WindowRefService } from "./WindowRefServiceservice";
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -26,7 +25,6 @@ export const appConfig: ApplicationConfig = {
           console.error(err);
         },
       } as SocialAuthServiceConfig,
-    },
-    WindowRefService
+    }
   ],
 };
