@@ -7,40 +7,18 @@
             Contact Us
           </h2>
         </div>
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div>
-            <input formControlName="username" type="text" placeholder="Username"/>
-            <div *ngIf="f.username.errors && (f.username.dirty || f.username.touched)">
-              <small *ngIf="f.username.errors['required']" class="text-danger">username is required.</small>
-            </div>
+            <input [(ngModel)]="contactUsList.username" type="text" placeholder="Username"/>
           </div>
           <div>
-
-            <input type="email" formControlName="email" placeholder="Email">
-            <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)">
-              <small *ngIf="f.email.errors['required']" class="text-danger">Email is required.</small>
-              <small *ngIf="f.email.errors['email']" class="text-danger">Email must be a valid email address.</small>
-            </div>
+            <input type="email"  placeholder="Email"  [(ngModel)]="contactUsList.email">
           </div>
           <div>
-
-            <input type="number" formControlName="mobile" placeholder="Moblie number">
-            <div *ngIf="f.mobile.errors && (f.mobile.dirty || f.mobile.touched)">
-              <small *ngIf="f.mobile.errors['required']" class="text-danger">Mobile number is required.</small>
-              <small *ngIf="f.mobile.errors['pattern']" class="text-danger">Mobile number must be 10 digits
-                long.</small>
-            </div>
+            <input type="number"  placeholder="Moblie number" [(ngModel)]="contactUsList.phoneno">
           </div>
           <div>
             <div>
-              <input formControlName="message" placeholder="Message">
-              <div *ngIf="f.message.errors && (f.message.dirty || f.message.touched)">
-                <small *ngIf="f.message.errors['required']" class="text-danger">Message is required.</small>
-                <small *ngIf="f.message.errors['minlength']" class="text-danger">Message must be at least 10 characters
-                  long.</small>
-                <small *ngIf="f.message.errors['maxLength']" class="text-danger">Message cannot exceed 1000
-                  characters.</small>
-              </div>
+              <input [(ngModel)]="contactUsList.message" placeholder="Message">
             </div>
           </div>
           <div class="btn-box">
@@ -48,9 +26,6 @@
               SEND
             </button>
           </div>
-        </form>
-
-
       </div>
       <div class="col-md-6">
         <div class="img-box">

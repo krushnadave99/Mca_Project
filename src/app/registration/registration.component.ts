@@ -1,27 +1,45 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from "@angular/common";
+import { Component } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { Router, RouterLink } from "@angular/router";
+import { User } from "../common";
+import { CommonserviceService } from "../commonservice.service";
 
 @Component({
-  selector: 'app-registration',
+  selector: "app-registration",
   standalone: true,
-  imports: [RouterLink,FormsModule,ReactiveFormsModule,CommonModule],
-  templateUrl: './registration.component.html',
-  styleUrl: './registration.component.scss'
+  imports: [RouterLink, FormsModule, ReactiveFormsModule, CommonModule],
+  templateUrl: "./registration.component.html",
+  styleUrl: "./registration.component.scss",
 })
 export class RegistrationComponent {
-  constructor(public router:Router){}
-  registrationForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    mobile: new FormControl('', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
-  })
-  get registration() { return this.registrationForm.controls; }
+  UserList = new User();
+  strErr:any;
+  constructor(
+    public router: Router,
+    // public Commonservice: CommonserviceService
+  ) {}
   onSubmitRegistration() {
-    // this.router.navigate(['login'])
-    // console.log(this.registrationForm.value);
-    // console.log("login");
+    if (!this.UserList.username) {
+      this.strErr+='User name is Required..'
+    }
+    if (!this.UserList.password) {
+      this.strErr+='Password is Required..'
+    }
+    if (!this.UserList.email) {
+      this.strErr+='Email is Required..'
+    }
+    if (!this.UserList.phoneno) {
+      this.strErr+='Phoneno is Required..'
+    }
+    // if (this.UserList) {
+    //   this.Commonservice.userRegistration(this.UserList).subscribe((e) => {
+    //     if (e) {
+    //       console.log(e);
+    //       this.router.navigate(['login']);
+    //     }
+    //   });
+    // }
+    this.router.navigate(['login']);
   }
 }

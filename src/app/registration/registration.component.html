@@ -2,48 +2,35 @@
   <div class="card">
     <h1 class="card-title">Sign Up</h1>
     <div class="card-form">
-      <form [formGroup]="registrationForm" (ngSubmit)="onSubmitRegistration()">
         <div class="form-group">
           <label for="username">Username</label>
           <div class="card-input-container username">
-            <input type="text" placeholder="Enter your username" formControlName="username">
-            <div *ngIf="registration.username.errors && (registration.username.dirty || registration.username.touched)">
-              <small *ngIf="registration.username.errors['required']">username is required.</small>
-            </div>
+            <input type="text" placeholder="Enter your username"  [(ngModel)]="UserList.username">
+            <span>{{strErr}}</span>
           </div>
         </div>
         <div class="form-group">
           <label for="username">Email</label>
           <div class="card-input-container Email">
-            <input type="email" placeholder="Enter your Email" formControlName="email">
-            <div *ngIf="registration.email.errors && (registration.email.dirty || registration.email.touched)">
-              <small *ngIf="registration.email.errors['required']">Email is required.</small>
-              <small *ngIf="registration.email.errors['email']">Email must be a valid email address.</small>
-            </div>
+            <input type="email" placeholder="Enter your Email"  [(ngModel)]="UserList.email">
+            <span>{{strErr}}</span>
           </div>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <div class="card-input-container password">
-            <input type="password" placeholder="Enter your password" formControlName="password">
-            <div *ngIf="registration.password.errors && (registration.password.dirty || registration.password.touched)">
-              <small *ngIf="registration.password.errors['required']">Password is required.</small>
-              <small *ngIf="registration.password.errors['minlength']">Password must be at least 8 characters long.</small>
-          </div>
+            <input type="password" placeholder="Enter your password"   [(ngModel)]="UserList.password">
+            <span>{{strErr}}</span>
           </div>
         </div>
         <div class="form-group">
           <label for="moblieno">Moblie No</label>
           <div class="card-input-container password">
-            <input type="number" placeholder="Enter your Moblie no" formControlName="mobile">
-            <div *ngIf="registration.mobile.errors && (registration.mobile.dirty || registration.mobile.touched)">
-              <small *ngIf="registration.mobile.errors['required']">Mobile number is required.</small>
-              <small *ngIf="registration.mobile.errors['pattern']">Mobile number must be 10 digits long.</small>
-          </div>
+            <input type="number" placeholder="Enter your Moblie no"  [(ngModel)]="UserList.phoneno">
+            <span>{{strErr}}</span>
           </div>
         </div>
-      </form>
-      <button class="card-button" type="submit" [routerLink]="'/login'">Sign UP</button>
+      <button class="card-button" type="submit" (click)="onSubmitRegistration()">Sign UP</button>
     </div>
   </div>
 </div>

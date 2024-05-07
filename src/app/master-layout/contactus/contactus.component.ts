@@ -1,6 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
+import { ContactUs } from "../../common";
+import { CommonserviceService } from "../../commonservice.service";
 
 @Component({
   selector: "app-contactus",
@@ -10,29 +12,32 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   styleUrl: "./contactus.component.scss",
 })
 export class ContactusComponent {
-
-  contactForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]),
-    email: new FormControl("", [Validators.required, Validators.email]),
-    password: new FormControl("", [
-      Validators.required,
-      Validators.minLength(8),
-    ]),
-    message: new FormControl("", [
-      Validators.required,
-      Validators.minLength(10),
-      Validators.maxLength(1000),
-    ]),
-    mobile: new FormControl("", [
-      Validators.required,
-      Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"),
-    ]),
-  });
-  get f() {
-    return this.contactForm.controls;
-  }
-
+  contactUsList =new ContactUs();
+  strErr:any;
+  constructor(    
+    // public Commonservice: CommonserviceService
+    
+  ){}
   onSubmit() {
-    console.log(this.contactForm.value);
+    if(!this.contactUsList.email){
+      this.strErr ="email is required";
+    }
+    if(!this.contactUsList.phoneno){
+      this.strErr ="Phoneno is required";
+    }
+    if(!this.contactUsList.username){
+      this.strErr ="Username is required";
+    }
+    if(!this.contactUsList.message){
+      this.strErr ="Message is required";
+    }
+    if(this.contactUsList){
+        console.log(this.contactUsList);
+        // this.Commonservice.contactus(this.contactUsList).subscribe(e=>{
+        //   if(e){
+        //     console.log(e);
+        //   }
+        // })
+    }
   }
 }

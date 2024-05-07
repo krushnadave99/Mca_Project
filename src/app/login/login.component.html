@@ -3,29 +3,21 @@
     <h1 class="card-title">Sign In</h1>
     <small class="card-subtitle">Enter your credentials and get access</small>
     <div class="card-form">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
         <div class="form-group">
           <label for="username">Email</label>
           <div class="card-input-container username">
-            <input type="email" formControlName="email"  placeholder="Enter your username"/>
-            <div *ngIf="login.email.errors&&(login.email.dirty ||login.email.touched)">
-              <small *ngIf="login.email.errors['required']" class="text-danger">Email is required.</small>
-              <small *ngIf="login.email.errors['email']" class="text-danger">Email must be a valid email address.</small>
-          </div>
+            <input type="email" [(ngModel)]="UserList.email" placeholder="Enter your username"/>
+            <span>{{strErr}}</span>
           </div>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <div class="card-input-container password">
-            <input type="password" placeholder="Enter your password" formControlName="password">
-            <div *ngIf="login.password.errors && (login.password.dirty || login.password.touched)">
-              <small *ngIf="login.password.errors['required']" class="text-danger">Password is required.</small>
-              <small *ngIf="login.password.errors['minlength']" class="text-danger">Password must be at least 8 characters long.</small>
-          </div>
+            <input type="password" placeholder="Enter your password" [(ngModel)]="UserList.password">
+            <span>{{strErr}}</span>
           </div>
         </div>
-      </form>
-      <button class="card-button" type="submit" [routerLink]="'/home'">Sign In</button>
+      <button class="card-button" type="submit"(click)="onSubmitLogin()">Sign In</button>
       <asl-google-signin-button type='standard' size='large' text="signin_with" class="mx-auto"/>
     </div>
   </div>
