@@ -3,26 +3,26 @@
     <h3>
       Books List
     </h3>
-    <hr>
   </div>
 </section>
 <div class="container">
   <div class="row m-0">
-    <ng-container *ngFor="let item of bookList">
-      <div class="col-md-2 mx-2 p-0">
-        <div class="box">
-          <a>
+    <ng-container *ngFor="let item of bookList" >
+      <div class="card">
+        <div class="content">
+          <a class="front">
             <img [src]="item.Img" alt="Booklist">
+            <div>
+              {{item.title}}
+            </div>
+            <div>
+              {{item.dec}}
+            </div>
+            <div>
+              {{item.price}}
+            </div>
+            <button class="btn btn-success mt-2">Add To Cart</button>
           </a>
-          <div>
-            {{item.title}}
-          </div>
-          <div>
-            {{item.dec}}
-          </div>
-          <div>
-            {{item.price}}
-          </div>
         </div>
       </div>
     </ng-container>
@@ -30,45 +30,25 @@
   <hr>
   <h2>Cat 1</h2>
   <div class="row m-0">
-    <ng-container *ngFor="let item of bookCat">
-      <div class="col-md-2 mx-2 p-0">
-        <div class="box">
-          <a>
+    <ng-container *ngFor="let item of bookList">
+      <div class="card">
+        <div class="content">
+          <a class="front">
             <img [src]="item.Img" alt="Booklist">
+            <div>
+              {{item.title}}
+            </div>
+            <div>
+              {{item.dec}}
+            </div>
+            <div>
+              {{item.price}}
+            </div>
+            <button class="btn btn-success mt-2">Add To Cart</button>
           </a>
-          <div>
-            {{item.title}}
-          </div>
-          <div>
-            {{item.dec}}
-          </div>
-          <div>
-            {{item.price}}
-          </div>
         </div>
       </div>
     </ng-container>
   </div>
-  <hr>
-  <h2>Cat 2</h2>
-  <div class="row m-0">
-    <ng-container *ngFor="let item of bookCat">
-      <div class="col-md-2 mx-2 p-0">
-        <div class="box">
-          <a>
-            <img [src]="item.Img" alt="Booklist">
-          </a>
-          <div>
-            {{item.title}}
-          </div>
-          <div>
-            {{item.dec}}
-          </div>
-          <div>
-            {{item.price}}
-          </div>
-        </div>
-      </div>
-    </ng-container>
-  </div>
+
 </div>

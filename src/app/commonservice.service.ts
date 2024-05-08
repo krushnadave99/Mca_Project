@@ -16,5 +16,13 @@ export class CommonserviceService {
   contactus(data:any){
     return this.http.post<any>(this.url +'/add-contact-data',data)
   }
-
+  addtoCart(data:any){
+    return this.http.post<any>(this.url +'/addto-cart',data)
+  }
+  getBlog(){
+    return this.http.get<any>(this.url +'/blog');
+  }
+  getBookCat(){
+    return this.http.get<any>(this.url +'/bookCatgeries');
+  }
 }

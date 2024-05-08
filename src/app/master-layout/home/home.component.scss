@@ -7,6 +7,8 @@
   padding: 75px 0;
   background-color: #f5f6f9;
   position: relative;
+  border-radius: 25px;
+  margin-top: 18px;
 
   #customCarousel1 {
     width: 100%;
@@ -18,7 +20,7 @@
     margin-bottom: 25px;
     line-height: 58px;
     font-size: 3rem;
-    text-shadow: 2px 2px #FF0000;
+    // text-shadow: 2px 2px #FF0000;
   }
 
   .detail-box a {
@@ -32,7 +34,7 @@
     transition: all 0.3s;
     margin-top: 15px;
     color: #FFA500;
-    text-shadow: 2px 0px #FF0000;
+    // text-shadow: 2px 0px #FF0000;
   }
 
   .img-box img {
@@ -42,8 +44,9 @@
 
 h5 {
   color: #FFA500;
-  text-shadow: 2px 2px #000000;
+  // text-shadow: 2px 2px #000000;
 }
+
 .catagory_section {
   position: relative;
 }
@@ -95,6 +98,7 @@ h5 {
     align-items: center;
     background: #FFA500;
     border-radius: 100%;
+    left: 31%;
 
     img {
       width: 55px;
@@ -108,6 +112,7 @@ h5 {
   align-items: center;
   text-align: center;
 }
+
 .layout_padding {
   padding: 60px 0;
 }
@@ -184,6 +189,7 @@ h5 {
     }
   }
 }
+
 .about_section {
   position: relative;
   background-color: #f5f6f9;
@@ -219,7 +225,7 @@ h5 {
     transition: all 0.3s;
     margin-top: 15px;
     color: #FFA500;
-    text-shadow: 2px 0px #FF0000;
+    // text-shadow: 2px 0px #FF0000;
 
   }
 
@@ -243,15 +249,17 @@ h5 {
     font-size: 2.9rem;
   }
 }
+
 .layout_padding {
-     padding: 60px 0;
+  padding: 60px 0;
 }
+
 .blog_section {
   background-color: #f5f6f9;
 }
 
 .layout_padding {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 .heading_container {
@@ -275,9 +283,11 @@ h5 {
     .detail-box {
       padding: 45px 25px 25px 25px;
       background: #ffffff;
+
       p {
         font-size: 15px;
       }
+
       a {
         color: #44b89d;
       }
@@ -316,3 +326,70 @@ h5 {
   }
 }
 
+@import 'https://fonts.googleapis.com/css?family=Lily+Script+One';
+
+body {
+  background: #eee;
+  font-family: 'Lily Script One';
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  float: left;
+  perspective: 500px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  // line-height: 300px;
+  color: #03446A;
+  text-align: center;
+  // font-size: 60px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.back {
+  background: #03446A;
+  color: white;
+  transform: rotateY(180deg);
+
+  p {
+    position: absolute;
+    top: 33%;
+    font-style: italic;
+    padding: 5px;
+  }
+}
+
+.client_section .detail-box {
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  h5{
+    color: white;
+    text-shadow: none;
+  }
+}

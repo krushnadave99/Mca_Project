@@ -13,9 +13,13 @@ import { CommonModule } from "@angular/common";
 export class CategoriesComponent {
   bookList: any;
   bookCat: any;
+  constructor(
+      // public Commonservice: CommonserviceService 
+  ){}
   ngOnInit(): void {
     this.initBookList();
     this.initBoocat();
+    this.bookCate()
   }
   initBookList() {
     this.bookList = [
@@ -132,5 +136,10 @@ export class CategoriesComponent {
         price: "400",
       },
     ];
+  }
+  bookCate(){
+    // this.Commonservice.getBookCat().subscribe((e:any)=>{
+    //   console.log(e);   
+    // })
   }
 }
