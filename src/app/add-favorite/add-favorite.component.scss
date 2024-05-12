@@ -5,15 +5,15 @@
   .card{
     padding: 1em 2em 1em 1em;
     font-size: 14px;
-    background: #f4f4f4;
+    // background: #f4f4f4;
     box-shadow: -10px -10px 20px rgb(255, 255, 255), 10px 10px 20px rgba(0, 0, 0, 0.1);
   }
   .box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid darkgray;
-    background: #f4f4f4;
+    // border: 1px solid darkgray;
+    // background: #f4f4f4;
     width: 100%;
     max-width: 400px;
     margin: 8px;

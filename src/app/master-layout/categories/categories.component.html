@@ -7,19 +7,17 @@
 </section>
 <div class="container">
   <div class="row m-0">
-    <ng-container *ngFor="let item of bookList" >
+    <ng-container *ngFor="let item of bookList">
       <div class="card">
         <div class="content">
           <a class="front">
-            <img [src]="item.Img" alt="Booklist">
-            <div>
-              {{item.title}}
+            <img [src]="item.Img" alt="Booklist" class="img">
+            <div class="d-flex justify-content-around mt-4">
+              <span> {{item.title}}</span>
+              <span> {{item.dec}}</span>
             </div>
             <div>
-              {{item.dec}}
-            </div>
-            <div>
-              {{item.price}}
+              <span> {{item.price}}</span>
             </div>
             <button class="btn btn-success mt-2">Add To Cart</button>
           </a>
@@ -34,15 +32,13 @@
       <div class="card">
         <div class="content">
           <a class="front">
-            <img [src]="item.Img" alt="Booklist">
-            <div>
-              {{item.title}}
+            <img [src]="item.Img" alt="Booklist" class="img">
+            <div class="d-flex justify-content-around mt-4">
+              <span> {{item.title}}</span>
+              <span> {{item.dec}}</span>
             </div>
             <div>
-              {{item.dec}}
-            </div>
-            <div>
-              {{item.price}}
+              <span> {{item.price}}</span>
             </div>
             <button class="btn btn-success mt-2">Add To Cart</button>
           </a>
@@ -50,5 +46,4 @@
       </div>
     </ng-container>
   </div>
-
 </div>

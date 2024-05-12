@@ -7,12 +7,14 @@
     font-size: 14px;
     // background: #f4f4f4;
     box-shadow: -10px -10px 20px rgb(255, 255, 255), 10px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    border: none;
   }
   .box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid darkgray;
+    // border: 1px solid darkgray;
     // background: #f4f4f4;
     width: 100%;
     margin: 8px;

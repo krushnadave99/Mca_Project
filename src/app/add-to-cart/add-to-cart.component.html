@@ -7,8 +7,8 @@
 </div>
 <h3 class="mx-4">My Shopping Cart</h3>
 <div class="row m-0">
-    <div class="col-md-8 p-0">
-        <div class="box d-block">
+    <div class="col-md-12">
+        <div class="box d-block m-0 mb-3">
             <div class="row">
                 <div class="col-md-2">
                     <img src="https://www.bookswagon.com/productimages/mainimages/604/9789386538604.jpg" alt="">
@@ -19,18 +19,24 @@
                     <p class="text-danger">₹1,716 </p>
                     <input type="number" class="qun"/>
                     <span class="mx-4 text-danger">Total Price : ₹1,716</span>
-                    <button class="btn btn-danger">Move to wishlist</button>
-                    <button class="btn  btn-outline-danger mx-2">Remove</button>
+                    <button class="btn btn-outline-danger mx-2">Remove</button>
+                </div>
+                <div class="col-md-2 mt-5">
+                    <span class="d-block">Total Items : 1</span>
+                    <span class="d-block">Total Gross : ₹1,716</span>
+                    <span class="d-block">Amount Payable : ₹1,716</span>
+                    <button class="btn btn-danger w-100 mt-3" (click)="PayNow()">Pay</button>
                 </div>
             </div>
         </div>
+
     </div>
-    <div class="col-md-4 mt-4">
+    <!-- <div class="col-md-4 mt-4">
         <div class="box d-flex">
             <span>Total Items : 1</span>
             <span>Total Gross : ₹1,716</span>
             <span>Amount Payable : ₹1,716</span>
             <button class="btn btn-danger w-50 mt-3" (click)="PayNow()">Pay</button>
         </div>
-    </div>
+    </div> -->
 </div>
