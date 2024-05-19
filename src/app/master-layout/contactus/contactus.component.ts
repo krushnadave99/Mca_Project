@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
+import {  FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ContactUs } from "../../common";
 import { CommonserviceService } from "../../commonservice.service";
 
@@ -15,7 +15,7 @@ export class ContactusComponent {
   contactUsList =new ContactUs();
   strErr:any;
   constructor(    
-    // public Commonservice: CommonserviceService
+    public Commonservice: CommonserviceService
     
   ){}
   onSubmit() {
@@ -33,11 +33,11 @@ export class ContactusComponent {
     }
     if(this.contactUsList){
         console.log(this.contactUsList);
-        // this.Commonservice.contactus(this.contactUsList).subscribe(e=>{
-        //   if(e){
-        //     console.log(e);
-        //   }
-        // })
+        this.Commonservice.contactus(this.contactUsList).subscribe(e=>{
+          if(e){
+            console.log(e);
+          }
+        })
     }
   }
 }

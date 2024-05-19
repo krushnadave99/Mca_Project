@@ -12,7 +12,7 @@ import { AddFavoriteComponent } from './add-favorite/add-favorite.component';
 import { HomeComponent } from './master-layout/home/home.component';
 
 export const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   {
     path: '',

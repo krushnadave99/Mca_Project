@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FooterComponent } from "../../footer/footer.component";
 import { HeaderComponent } from "../../header/header.component";
 import { CommonModule } from "@angular/common";
+import { CommonserviceService } from "../../commonservice.service";
 
 @Component({
   selector: "app-categories",
@@ -14,7 +15,7 @@ export class CategoriesComponent {
   bookList: any;
   bookCat: any;
   constructor(
-      // public Commonservice: CommonserviceService 
+      public Commonservice: CommonserviceService 
   ){}
   ngOnInit(): void {
     this.initBookList();
@@ -138,8 +139,8 @@ export class CategoriesComponent {
     ];
   }
   bookCate(){
-    // this.Commonservice.getBookCat().subscribe((e:any)=>{
-    //   console.log(e);   
-    // })
+    this.Commonservice.getBookCat().subscribe((e:any)=>{
+      console.log(e);   
+    })
   }
 }

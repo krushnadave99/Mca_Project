@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CommonserviceService } from "../../commonservice.service";
 
 @Component({
   selector: "app-blog",
@@ -9,14 +10,14 @@ import { Component } from "@angular/core";
 })
 export class BlogComponent {
   constructor(
-      // public Commonservice: CommonserviceService 
+      public Commonservice: CommonserviceService 
   ) {}
   ngOnInit() {
     this.blogGet();
   }
   blogGet(){
-    // this.Commonservice.getBlog().subscribe((e:any)=>{
-    //   console.log(e);
-    // })
+    this.Commonservice.getBlog().subscribe((e:any)=>{
+      console.log(e);
+    })
   }
 }

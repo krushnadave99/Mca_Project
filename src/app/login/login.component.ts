@@ -35,7 +35,7 @@ export class LoginComponent {
   constructor(
     private authServicce: SocialAuthService,
     private router: Router,
-    // public Commonservice: CommonserviceService
+    public Commonservice: CommonserviceService
   ) {}
   ngOnInit() {
     this.authServicce.authState.subscribe((user) => {
@@ -53,11 +53,11 @@ export class LoginComponent {
     if (!this.UserList.password) {
       this.strErr = "Password is Required.";
     }
-    // this.Commonservice.userLogin(this.UserList).subscribe((e) => {
-    //   if(e){
-    //     console.log(e);
+    this.Commonservice.userLogin(this.UserList).subscribe((e) => {
+      if(e){
+        console.log(e);
         this.router.navigate(["home"]);
-    //   }
-    // });
+      }
+    });
   }
 }

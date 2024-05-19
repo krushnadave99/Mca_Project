@@ -17,7 +17,7 @@ export class RegistrationComponent {
   strErr:any;
   constructor(
     public router: Router,
-    // public Commonservice: CommonserviceService
+    public Commonservice: CommonserviceService
   ) {}
   onSubmitRegistration() {
     if (!this.UserList.username) {
@@ -32,14 +32,14 @@ export class RegistrationComponent {
     if (!this.UserList.phoneno) {
       this.strErr+='Phoneno is Required..'
     }
-    // if (this.UserList) {
-    //   this.Commonservice.userRegistration(this.UserList).subscribe((e) => {
-    //     if (e) {
-    //       console.log(e);
-    //       this.router.navigate(['login']);
-    //     }
-    //   });
-    // }
-    this.router.navigate(['login']);
+    if (this.UserList) {
+      this.Commonservice.userRegistration(this.UserList).subscribe((e) => {
+        if (e) {
+          console.log(e);
+          this.router.navigate(['login']);
+        }
+      });
+    }
+    // this.router.navigate(['login']);
   }
 }
